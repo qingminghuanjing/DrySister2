@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="zhufengjie.com.drysister2.MainActivity">
+    tools:context="zhufengjie.com.drysister2.ui.activity.MainActivity">
 
     <ImageView
         android:id="@+id/img_show"
@@ -12,6 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_launcher"/>
+    <Button
+        android:id="@+id/btn_refresh_1"
+        android:layout_toLeftOf="@+id/btn_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="上一批"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        />
 
     <Button
         android:id="@+id/btn_show"
@@ -19,6 +29,16 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="下一张"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        />
+    <Button
+        android:id="@+id/btn_refresh_2"
+        android:layout_toRightOf="@+id/btn_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="下一批"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         />
