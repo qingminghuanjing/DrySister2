@@ -14,7 +14,7 @@
         android:src="@mipmap/ic_launcher"/>
     <Button
         android:id="@+id/btn_refresh_1"
-        android:layout_toLeftOf="@+id/btn_show"
+        android:layout_toLeftOf="@+id/btn_show_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -24,7 +24,18 @@
         />
 
     <Button
-        android:id="@+id/btn_show"
+        android:id="@+id/btn_show_1"
+        android:layout_toLeftOf="@+id/btn_show_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="上一张"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        />
+
+    <Button
+        android:id="@+id/btn_show_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -34,7 +45,7 @@
         />
     <Button
         android:id="@+id/btn_refresh_2"
-        android:layout_toRightOf="@+id/btn_show"
+        android:layout_toRightOf="@+id/btn_show_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
