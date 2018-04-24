@@ -11,7 +11,7 @@ public class Sister {
     private String source;
     private String type;
     private String url;
-    private boolean used;
+    private int used;
     private String who;
     private String publishedAt;
     public String getCreateAt() {
@@ -62,11 +62,11 @@ public class Sister {
         this.url = url;
     }
 
-    public boolean isUsed() {
+    public int isUsed() {
         return used;
     }
 
-    public void setUsed(boolean used) {
+    public void setUsed(int used) {
         this.used = used;
     }
 

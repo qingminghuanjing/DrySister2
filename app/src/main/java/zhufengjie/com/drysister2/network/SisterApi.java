@@ -70,7 +70,7 @@ public class SisterApi {
         }catch (Exception e){
             e.printStackTrace();
         }
-        Log.e("sisters",sisters.size()+"====================");
+        Log.e("sisters",sisters+"====================");
      return sisters;
     }
 
@@ -89,7 +89,7 @@ public class SisterApi {
                 sister.setSource(results.getString("source"));
                 sister.setType(results.getString("type"));
                 sister.setUrl(results.getString("url"));
-                sister.setUsed(results.getBoolean("used"));
+                sister.setUsed(1);
                 sister.setWho(results.getString("who"));
                 sisters.add(sister);
             }
