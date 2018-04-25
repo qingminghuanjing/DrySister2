@@ -16,6 +16,7 @@ import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.URL;
 
 import zhufengjie.com.drysister2.imgloader.SisterCompress;
 import zhufengjie.com.drysister2.imgloader.disklrucache.DiskLruCache;
@@ -61,8 +62,10 @@ public class DiskCacheHelper {
         final String cachePath;
         if (externalStorageAvailable) {
             cachePath = context.getExternalCacheDir().getPath();
+            Log.e("磁盘1", cachePath );
         } else {
             cachePath = context.getCacheDir().getPath();
+            Log.e("磁盘1", cachePath );
         }
         Log.v(TAG,"diskCachePath = " + cachePath);
         return new File(cachePath + File.separator + dirName);
@@ -76,6 +79,16 @@ public class DiskCacheHelper {
         }
         final StatFs stats = new StatFs(path.getPath());
         return stats.getBlockSize() * (long) stats.getAvailableBlocks();
+    }
+
+    public boolean delete(){
+        try {
+            mDiskLruCache.delete();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return true;
     }
 
     /** 根据Key加载磁盘缓存中的图片 */

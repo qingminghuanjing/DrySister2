@@ -27,27 +27,15 @@ public class SisterApi {
 //    private static final String BASE_URL = "http://gank.io/api/data/"+fuli+"/";
 //    private static final String BASE_URL = "http://gank.io/api/data/福利/";
 //private static final String BASE_URL = "http://gank.io/api/data/%E7%A6%8F%E5%88%A9/";
-    private static final String fuli = chineseToutf_8("福利");
-    private static final String BASE_URL = "http://gank.io/api/data/"+fuli+"/";
 
-
-    public static String chineseToutf_8(String s){
-        String fuli = null;
-        try {
-            fuli = URLEncoder.encode(s, "utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return fuli;
-    }
     /**
      * 查询图片信息
      */
 
 
 
-    public ArrayList<Sister> fetchSister(int count, int page){
-        String fetchUrl = BASE_URL+count+"/"+page;
+    public ArrayList<Sister> fetchSister(String stationUrl,int count, int page){
+        String fetchUrl = stationUrl+count+"/"+page;
         ArrayList<Sister> sisters = new ArrayList<>();
         try {
             URL url = new URL(fetchUrl);
@@ -55,14 +43,11 @@ public class SisterApi {
             conn.setRequestMethod("GET");
             conn.setReadTimeout(5000);
             int code = conn.getResponseCode();
-            Log.v(TAG,"Server responseCode:"+code);
             if (code==200){
                 InputStream in = conn.getInputStream();
                 Log.e("sisters","111111");
                 byte[] data = readFromStream(in);
-                Log.e("sisters",data.length+"=======222222222222=============");
                 String result = new String(data,"UTF-8");
-                Log.e("sisters",result);
                 sisters = parseSister(result);
             }else {
                 Log.e(TAG,"请求失败："+code);
@@ -70,7 +55,6 @@ public class SisterApi {
         }catch (Exception e){
             e.printStackTrace();
         }
-        Log.e("sisters",sisters+"====================");
      return sisters;
     }
 

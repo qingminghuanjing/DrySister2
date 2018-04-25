@@ -1,50 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:background="#FFFFFF"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="zhufengjie.com.drysister2.ui.activity.MainActivity">
+   >
+    <include layout="@layout/face_main"/>
 
-    <ImageView
-        android:id="@+id/img_show"
-        android:layout_gravity="center"
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header">
 
-    <LinearLayout
-        android:id="@+id/ll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:layout_alignParentBottom="true"
-        >
-        <Button
-            android:id="@+id/btn_refresh_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="上一批"
-            />
-        <Button
-            android:id="@+id/btn_show_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="上一张"
-            />
-        <Button
-            android:id="@+id/btn_show_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="下一张"
-            />
-        <Button
-            android:id="@+id/btn_refresh_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="下一批"
-            />
-    </LinearLayout>
-</RelativeLayout>
+
+    </android.support.design.widget.NavigationView>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_gravity="start"-->
+        <!--android:background="#FFFFFF">-->
+        <!--<ImageView-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="120dp"-->
+            <!--android:scaleType="fitStart"-->
+
+            <!--android:src="@mipmap/drawer_img"/>-->
+        <!--<TextView-->
+            <!--android:drawableLeft="@mipmap/ic_settings"-->
+            <!--android:drawablePadding="10dp"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:text="干货集中营"-->
+            <!--android:textSize="18sp"-->
+            <!--android:background="@drawable/tv_shape"/>-->
+        <!--<TextView-->
+            <!--android:drawableLeft="@mipmap/ic_settings"-->
+            <!--android:drawablePadding="10dp"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:text="某网站图片"-->
+            <!--android:textSize="18sp"-->
+            <!--android:background="@drawable/tv_shape"/>-->
+        <!--<TextView-->
+            <!--android:drawableLeft="@mipmap/ic_settings"-->
+            <!--android:drawablePadding="10dp"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:text="某网站图片"-->
+            <!--android:textSize="18sp"-->
+            <!--android:background="@drawable/tv_shape"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#FFFFFF"/>-->
+    <!--</LinearLayout>-->
+
+
+</android.support.v4.widget.DrawerLayout>
+
+
