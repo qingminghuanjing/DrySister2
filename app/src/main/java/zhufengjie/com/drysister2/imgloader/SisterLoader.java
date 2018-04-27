@@ -120,7 +120,6 @@ public class SisterLoader {
         }
         return bitmap;
     }
-
     /** 异步加载图片 */
     public void bindBitmap(final String url, final ImageView imageView,
                            final int reqWidth, final int reqHeight) {
